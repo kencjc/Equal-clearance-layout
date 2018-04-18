@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{padding: 0;margin: 0;}
+    body{overflow-x: hidden;}
+    .warp{margin: 24px 0;overflow: hidden;}
+    .method-one{display: flex;}
+    .method-one::before, .method-one::after{display: block;content: '';flex:1;}
+    .method-one .item{background: red;width: 100px;height: 100px;}
+    .method-one .block{flex:1;}
+    
+    .method-tow{display: grid;grid-template-columns:1fr 100px 1fr 100px 1fr 100px 1fr;}
+    .method-tow::before, .method-tow::after{display: block;content: '';}
+    .method-tow .item{background: red;width: 100px;height: 100px;}
+
+    .method-three{font-size: 0;padding: 0  }
+    .method-three .item{background: red;width: 100px;height: 100px;float: left;margin-left: calc((100% - 300px) / 4)}
+
+    .method-four{margin-right: -100px;}
+    .method-four .item{width: 25%;float: left;}
+    .method-four .item .inner{background: red;width: 100px;height: 100px;float: right;}
+
+    .method-five{padding: 0 calc((100% - 300px) / 8)}
+    .method-five .item{width: 33.33333%;float: left;text-align: center;}
+    .method-five .item .inner{background: red;width: 100px;height: 100px;display: inline-block;}
+
+    .method-six{font-size: 0;overflow: hidden;text-align: justify;text-align-last: justify;margin: 0 -100px;}
+    .method-six::before, .method-six::after{display: inline-block;content: '';width: 100px;}
+    .method-six .item{background: red;width: 100px;height: 100px;display: inline-block;}
+
+    .method-seven{margin:24px -50px;}
+    .method-seven .item{width: 25%;float: left;}
+    .method-seven .item .inner{background: red;width: 100px;height: 100px;float: right;margin-right: -50px;}
+
+    .method-eight{display: flex;justify-content:space-between;height: 100px;margin:24px -100px;}
+    .method-eight::before, .method-eight::after{display: inline-block;content: '';width: 100px;}
+    .method-eight .item{background: red;width: 100px;height: 100px;}
+  </style>
+</head>
+<body>
+<div class="warp method-one">
+  <div class="item"></div>
+  <div class="block"></div>
+  <div class="item"></div>
+  <div class="block"></div>
+  <div class="item"></div>
+</div>
+
+<div class="warp method-tow">
+  <div class="item"></div>
+  <div class="block"></div>
+  <div class="item"></div>
+  <div class="block"></div>
+  <div class="item"></div>
+</div>
+
+<div class="warp method-three">
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+</div>
+
+<div class="warp method-four">
+  <div class="item"><div class="inner"></div></div>
+  <div class="item"><div class="inner"></div></div>
+  <div class="item"><div class="inner"></div></div>
+</div>
+
+<div class="warp method-five">
+  <div class="item"><div class="inner"></div></div>
+  <div class="item"><div class="inner"></div></div>
+  <div class="item"><div class="inner"></div></div>
+</div>
+
+<div class="warp method-six">
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+</div>
+
+<div class="warp method-seven">
+  <div class="item"><div class="inner"></div></div>
+  <div class="item"><div class="inner"></div></div>
+  <div class="item"><div class="inner"></div></div>
+</div>
+
+<div class="warp method-eight">
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+</div>
+</body>
+</html>
